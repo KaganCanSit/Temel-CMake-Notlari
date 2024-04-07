@@ -1,7 +1,7 @@
 ---
 name: Türkçe Hata Şablonu
-about: Türkçe kaynağın geliştirilmesi için hata şablonu.
-title: "[Hatanızın Basitçe Tipi(Kod Bug, Yazım Hatası)] - Hatanızı Kapsayan Başlık"
+about: Türkçe olarak hata bildiriminin yapılabilmesi için düzelenmiş hata şablonu.
+title: "[Hatanızın Basitçe Tipi(Kod Hatası, Yazım Hatası)] - Hatanızı Kapsayan Başlık"
 labels: ''
 assignees: ''
 

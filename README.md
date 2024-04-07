@@ -1,10 +1,10 @@
 # [TR] Türkçe CMake Notları
 
-<center>
-<img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:30%; height:30%;"/>
+<div style="text-align: center;">
+    <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:40%; height:40%;"/>
 
-[İllüstrasyon Kaynak Bağlantısı](hhttps://storyset.com/illustration/hello/rafiki)
-</center>
+[İllüstrasyon Kaynak Bağlantısı](https://storyset.com/illustration/hello/rafiki)
+</div>
 
 **👋 Merhaba, Hoş Geldin!**
 
@@ -16,11 +16,11 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 
 ## Katkı
 
-<center>
-<img src="images/Readme-Images/storysetContribute.svg" alt="Katkı Başlığının Üst Görseli" style="width:30%; height:30%;"/>
+<div style="text-align: center;">
+<img src="images/Readme-Images/storysetContribute.svg" alt="Katkı Başlığının Üst Görseli" style="width:40%; height:40%;"/>
 
 [İllüstrasyon Kaynak Bağlantısı](https://storyset.com/illustration/website-creator/bro)
-</center>
+</div>
 
 Burada yer alan içerikler açık kaynak olarak geliştirilme gayesi taşımaktadır. Katkı sağlamak için çeşitli adımlarla yardımcı olabilirsiniz.
 
@@ -38,15 +38,13 @@ Pull request araclığıyla katkı sağlayacağınıza veya hata bildireceğiniz
 
 **Unutmayın! Gelişmek, geliştirmek ve sıfırdan bir yapıyı ilerletmek yeterince zor. Bu tip bildirim ve katkı sağlarken tüm topluluk adına anlayışlı, paylaşımcı ve nazik olun. Ayrıca eklediğiniz içeriklerde kullandığınız dış kaynaklar varsa kesinlikle referans verin. İçerikler sahipleri, o içeriği destekleyenler için emeklerini teslim edelim!**
 
-
-
 ## İçerik ve Akış
 
-<center>
-<img src="images/Readme-Images/storysetContent.png" alt="İçerik Başlığının Üst Görseli" style="width:30%; height:30%;"/>
+<div style="text-align: center;">
+<img src="images/Readme-Images/storysetContent.png" alt="İçerik Başlığının Üst Görseli" style="width:40%; height:40%;"/>
 
 [İllüstrasyon Kaynak Bağlantısı](https://storyset.com/illustration/content/cuate)
-</center>
+</div>
 
 Burada yer alan içerikler birçok kez vurgulandığı gibi CMake'in kullanımına dair çeşitli notları ve örnekleri bir araya getirerek, denemeler yapılarak oluşturulmuştur. Çeşitli hataları, eksiklikleri bulunabilir.
 
@@ -59,21 +57,21 @@ Genel olarak içerik akışı sıralı olarak takip edilebilir. İçeriklere dai
 
 ## Lisans
 
-<center>
-<img src="images/Readme-Images/storysetCertification.png" alt="Lisans Başlığının Üst Görseli" style="width:30%; height:30%;"/>
+<div style="text-align: center;">
+<img src="images/Readme-Images/storysetCertification.png" alt="Lisans Başlığının Üst Görseli" style="width:40%; height:40%;"/>
 
 [İllüstrasyon Kaynak Bağlantısı](https://storyset.com/illustration/certification/bro)
-</center>
+</div>
 
 Bu proje GNU General Public License v3.0 altında lisanslanmıştır. Yukarıda da belirtildiği gibi açık kaynak olarak geliştirilme gayesi taşımakta fakat çeşitli kısıtlamalar ve sorumluluk barındırmaktadır. Detaylı bilgi için [LICENSE](LICENSE) dosyasını inceleyebilirsiniz.
 
 ## İletişim
 
-<center>
-<img src="images/Readme-Images/storysetContact.png" alt="Iletişim Başlığının Üst Görseli" style="width:30%; height:30%;"/>
+<div style="text-align: center;">
+<img src="images/Readme-Images/storysetContact.png" alt="Iletişim Başlığının Üst Görseli" style="width:40%; height:40%;"/>
 
 [İllüstrasyon Kaynak Bağlantısı](https://storyset.com/illustration/mailbox/bro)
-</center>
+</div>
 
 Projeyi desteklemek ve katkıda bulunmak için "Issue, Pull Request, Sponsor" kısımlarının yeterli olacağını düşünüyorum. Fakat bu proje veya yeni bir proje hakkında tartışmak, öneride bulunmak, bir çay/kahve içmek isterseniz [mail adresimden](mailto:kagancansit@hotmail.com) bana ulaşabilirsiniz. 
 

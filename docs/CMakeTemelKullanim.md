@@ -1,7 +1,7 @@
 
 <div align="center">
     <h1>CMake'in Temel Kullanımı</h1>
-    <img src="../images/CMakeTemelKullanim//start.svg" alt="İçerik Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="../images/CMakeTemelKullanim/start.svg" alt="İçerik Başlığının Üst Görseli" style="width:40%; height:40%;"/>
     <p><a href="https://storyset.com/illustration/launching/amico">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -110,7 +110,7 @@ Farklı derleyicilerle derleme yapmak istediğinizde komut satırı üzerinden p
 
 # Sonuç
 
-CMake yardımıyla basit bir proje kodunun yönetimini, farklı derleyiciler için nasıl kullanılabileğini, platformlar arası taşınabilirlik ve zaman kazanımı için bizlere yardımcı olma potansiyelini bu örnek sayesinde denmiş olduk.
+CMake yardımıyla basit bir proje kodunun yönetimini, farklı derleyiciler için nasıl kullanılabileğini, platformlar arası taşınabilirlik ve zaman kazanımı için bizlere yardımcı olma potansiyelini bu örnek sayesinde denemiş olduk.
 
 
 # Kaynakça

@@ -20,6 +20,7 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 </div>
 
 - [CMake Hakkında Genel Bilgiler](docs/CMakeHakkindaGenelBilgiler.md)
+- [CMake'in Temel Kullanımı](docs/CMakeTemelKullanim.md)
 - [CMake Dosya Yapısı](docs/cmake_dosya_yapisi.md)
 - [Örnek Uygulamalar](docs/ornek_uygulamalar.md)
 - [İleri Düzey Konular](docs/ileri_duzey_konular.md)

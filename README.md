@@ -1,6 +1,6 @@
 <div align="center">
     <h1>CMAKE NOTLARI</h1>
-    <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/hello/rafiki">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -19,7 +19,7 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
     <p><a href="https://storyset.com/illustration/content/cuate">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
-- [Giriş ve Temel Kavramlar](docs/giris_ve_temel_kavramlar.md)
+- [CMake Hakkında Genel Bilgiler](docs/CMakeHakkindaGenelBilgiler.md)
 - [CMake Dosya Yapısı](docs/cmake_dosya_yapisi.md)
 - [Örnek Uygulamalar](docs/ornek_uygulamalar.md)
 - [İleri Düzey Konular](docs/ileri_duzey_konular.md)

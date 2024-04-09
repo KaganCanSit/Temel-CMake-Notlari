@@ -164,8 +164,9 @@ Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli
 * [What is Ninja vs CMake](https://www.quora.com/What-is-Ninja-vs-CMake)
 * [Difference between invoking `ninja` directly vs through `cmake --build`](https://stackoverflow.com/questions/70855120/difference-between-invoking-ninja-directly-vs-through-cmake-build)
 * [Can you help me understand what the difference of Make, CMake, and Ninja?](https://www.reddit.com/r/embedded/comments/sbhg3q/can_you_help_me_understand_what_the_difference_of/)
+* [ENCSS - CMake hands-on workshop](https://enccs.github.io/cmake-workshop/)
 
 <div align="center">
     <a href="CMakeHakkindaGenelBilgiler.md"> < Önceki Sayfaya Dön</a> ---  
-    <a href="#"> Sonraki Sayfaya İlerle ></a>
+    <a href="CMakeKutuphaneEklemek.md"> Sonraki Sayfaya İlerle ></a>
 </div>

@@ -8,7 +8,7 @@
 
 Ben Kağan, kendi halinde bir geliştiriciyim. Yazılım ve teknoloji üzerine zaman geçirmeyi, müzik dinlerken düşünmeyi, sakinliği seven bir insanım.
 
-Bu kaynağı, **bir öğrenici olarak CMake'in kullanımına dair notları, örnekleri ve yapmış olduğum çeşitli denemeleri bir araya getirerek oluşturdum. Bu sebeple çeşitli eksikleri, yanlış kısımları ve bir sayısalcı olarak yazım hataları bulunabilir. 🙏🏻 Bu durumlarda veya eklemek istediğiniz bilgiler olursa "Katkı" başlığı altındaki adımlar aracılığıyla bana iletin. Birlikte bu içeriği daha ileriye taşıyarak, teknik becerileri arttırmanın yanı sıra kapsamlı bir Türkçe kaynak oluşturabiliriz.**
+Bu kaynağı **zaman zaman kullandığım CMake'i daha iyi temellendirmek ve Türkçe dilini ön plana çıkarmak amacıyla temel içeriklerden, örneklerden faydalanarak oluşturdum. Bu sebeple çeşitli eksikleri, yanlış kısımları, yazım hataları bulunabilir.** Bu tip hataları fark eder veya yeni içeriklerle yardımcı olmak isterseniz "Katkı" başlığı altındaki adımları takip edebilirsiniz. Yardımınızla burada yer alan içeriği daha ileriye taşıyarak, teknik olarak ilerlemenin yanı sıra kapsamlı bir Türkçe kaynak oluşturabiliriz.
 
 Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik olarak arkaplanda yönetmesi ve CMake'e dair kapsam bilgimin az olmasına dayanıyor. Bir açık kaynak projeye katkıda bulunmak veya grafik/GNU arayüzü olmayan bir ortamda geliştirme yapmak istediğimde tekrar tekrar çeşitli içerikleri inceliyorum. Bu sebeple güzel bir kaynak oluşturmanın ve oluşturduğum kaynağı paylaşmanın verimli olduğunu düşündüm. Bu doğrultuda topluluk sayesinde daha nitelikli düzeltmeler alabileceğimi ve teknik gelişimimi ileriye taşıyacağımı düşünüyorum.
 
@@ -19,9 +19,11 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
     <p><a href="https://storyset.com/illustration/content/cuate">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
+İçerikler bir ders akışı gibi birbirlerine bağlantılı olarak ilerlemektedir.Sırayla takip etmeniz önerilir.
+
 - [CMake Hakkında Genel Bilgiler](docs/CMakeHakkindaGenelBilgiler.md)
 - [CMake'in Temel Kullanımı](docs/CMakeTemelKullanim.md)
-- [CMake Dosya Yapısı](docs/cmake_dosya_yapisi.md)
+- [CMake Konfigürasyonuna Kütüphane Eklemek](docs/CMakeKutuphaneEklemek.md)
 - [Örnek Uygulamalar](docs/ornek_uygulamalar.md)
 - [İleri Düzey Konular](docs/ileri_duzey_konular.md)
 

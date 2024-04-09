@@ -156,5 +156,5 @@ Temel düzey olan bu içeriklerin yanı sıra daha kapsamlı öğrenmek ve derin
 
 <div align="center">
     <a href="CMakeTemelKullanim.md"> < Ana Sayfaya Dön</a> --- 
-    <a href="#"> Sonraki Sayfaya İlerle ></a>
+    <a href="ProjeyiAltDizilereAyırmakVeYonetmek.md"> Sonraki Sayfaya İlerle ></a>
 </div>

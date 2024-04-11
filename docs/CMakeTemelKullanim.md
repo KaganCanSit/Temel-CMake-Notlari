@@ -48,8 +48,16 @@ CMake direktiflerimizi belirtmek için kök dizininde önceden oluşturduğumuz 
 
 **CMakeLists.txt** betik diline dair kısa tüyolar;
 - Yazılan komutlar tek satırda ele alınır.
-- Parametre olarak geçilen içerikler bir dizi olarak kabul edilir. (Örn; DESCRIPTION tanımlamasında tırnak kullanmazsanız hata alırsınız!)
-- Değişkenlerinizi atama operatörleri değil, set fonksiyonuyla gerçekleştirmelisiniz. (Örn; set(TEST "TestMesssage"))
+- Parametre olarak geçilen içerikler bir dizi olarak kabul edilir. Boşluk içeren değerlerde DESCRIPTION tanımlamasında olduğu gibi tırnak kullanmalısınız.
+- Değişkenlerinizi atama operatörleri değil, set fonksiyonuyla gerçekleştirmelisiniz.
+
+        set(name "Kağan Can Şit")
+
+- Değişken değerleri yazdırırken dolar işareti, yay ayraç içerisine değişken adını girmelisiniz. 
+
+        message("Merhaba, ben ${name}!")
+
+CMake'in betik dili için nitelikli olarak [bağlantıda](https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/) yer alan kaynağı inceleyebilirsiniz.
 
 Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
 
@@ -166,6 +174,11 @@ Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli
     cd build/
     cmake --build .
 
+Örnekler sırasında **rm -rf * komutu** kullanılıyor fakat make ve ninja için **help** aracılığıyla gerekli komutları **cmake --build .** ile birlikte kullanabilirsiniz. Örneğin Unix System Files ve make kullanacaksınız;
+
+    cmake --build . --target clean
+    cmake --build . --target all
+
 # Kaynakça
 
 * ChatGPT 3.5'ten yardım alınmıştır.
@@ -179,6 +192,7 @@ Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli
 * [Can you help me understand what the difference of Make, CMake, and Ninja?](https://www.reddit.com/r/embedded/comments/sbhg3q/can_you_help_me_understand_what_the_difference_of/)
 * [ENCSS - CMake hands-on workshop](https://enccs.github.io/cmake-workshop/)
 * [Cmake Temel (Zero to Level0.1)](https://www.youtube.com/watch?v=4rHP7FGYpMY)
+* [Learn CMake's Scripting Language in 15 Minutes](https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/)
 
 <div align="center">
     <a href="CMakeHakkindaGenelBilgiler.md"> < Önceki Sayfaya Dön</a>

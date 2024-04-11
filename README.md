@@ -19,7 +19,7 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
     <p><a href="https://storyset.com/illustration/content/cuate">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
-İçerikler bir ders akışı gibi birbirlerine bağlantılı olarak ilerlemektedir. Sıralı olarak takip etmeniz önerilir.
+İçerikler temel düzeydedir ve bir ders akışı gibi birbirlerine bağlantılı olarak ilerlemektedir. Sıralı olarak takip etmeniz önerilir. Daha nitelikli bilgi almak ve ileri düzey öğrenmek için resmi dokümantasyonlara göz atmanız önerilir.
 
 - [CMake Hakkında Genel Bilgiler](docs/CMakeHakkindaGenelBilgiler.md)
 - [CMake'in Temel Kullanımı](docs/CMakeTemelKullanim.md)

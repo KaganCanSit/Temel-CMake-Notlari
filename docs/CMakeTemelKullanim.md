@@ -167,6 +167,7 @@ Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli
 * [ENCSS - CMake hands-on workshop](https://enccs.github.io/cmake-workshop/)
 
 <div align="center">
-    <a href="CMakeHakkindaGenelBilgiler.md"> < Önceki Sayfaya Dön</a> ---  
+    <a href="CMakeHakkindaGenelBilgiler.md"> < Önceki Sayfaya Dön</a>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
     <a href="CMakeKutuphaneEklemek.md"> Sonraki Sayfaya İlerle ></a>
 </div>

@@ -68,6 +68,7 @@ CMake'in temel işlevleri şunlardır:
 * [Doxygen](https://www.doxygen.nl/index.html)
 
 <div align="center">
-    <a href="../README.md"> < Ana Sayfaya Dön</a> --- 
+    <a href="../README.md"> < Ana Sayfaya Dön</a>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
     <a href="CMakeTemelKullanim.md"> Sonraki Sayfaya İlerle ></a>
 </div>

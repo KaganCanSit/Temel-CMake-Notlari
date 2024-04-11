@@ -155,6 +155,7 @@ Temel düzey olan bu içeriklerin yanı sıra daha kapsamlı öğrenmek ve derin
 * [How to CMake Good - 1b - Adding a Library](https://youtu.be/abuCXC3t6eQ?si=7pXmDg5BHh17Zbsn)
 
 <div align="center">
-    <a href="CMakeTemelKullanim.md"> < Ana Sayfaya Dön</a> --- 
-    <a href="ProjeyiAltDizilereAyırmakVeYonetmek.md"> Sonraki Sayfaya İlerle ></a>
+    <a href="CMakeTemelKullanim.md"> < Ana Sayfaya Dön</a>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <a href="ProjeyiAltDizinlereAyirmakVeYonetmek.md"> Sonraki Sayfaya İlerle ></a>
 </div>

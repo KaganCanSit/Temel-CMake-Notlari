@@ -13,8 +13,9 @@ CMake, **"Cross-Platform Make"** kısaltmasıyla bilinen bir derleme sistemi olu
 
 > CMake'in otomatik olarak oluşturduğu ve yönettiği Make (Makefile) dosyası, bir programın nasıl derleneceğini, hangi dosyaların bir araya getirilmesi gerektiğini ve bağlı programların nasıl çalıştırıldığını belirten bir metin dosyasıdır. Özellikle C, C++ ve benzeri dillerde yazılmış programların derlenmesi ve yönetilmesi için kullanılır.  [Bağlantı](https://www.youtube.com/watch?v=GExnnTaBELk) üzerinde  yer alan videodan daha kapsamlı bilgi alabilirsiniz.
 
+## CMake ve Make Süreci
 
-CMake çeşitli yapılandırma ve ayarlarını spesifik olarak dizine özgü "**CMakeLists.txt**" olarak isimlendirilmiş dosyalar sayesinde gerçekleştirir.
+CMake, çeşitli yapılandırma ve spesifik ayarları dizine özgü olarak oluşturulan "**CMakeLists.txt**" olarak isimlendirilmiş dosyalar sayesinde gerçekleştirir.
 
 
 <div align="center">

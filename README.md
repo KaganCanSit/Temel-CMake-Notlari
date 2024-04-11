@@ -8,18 +8,16 @@
 
 Ben Kağan, kendi halinde bir geliştiriciyim. Yazılım ve teknoloji üzerine zaman geçirmeyi, müzik dinlerken düşünmeyi, sakinliği seven bir insanım.
 
-Bu kaynağı **zaman zaman kullandığım CMake'i daha iyi temellendirmek ve Türkçe dilini ön plana çıkarmak amacıyla temel içeriklerden, örneklerden faydalanarak oluşturdum. Bu sebeple çeşitli eksikleri, yanlış kısımları, yazım hataları bulunabilir.** Bu tip hataları fark eder veya yeni içeriklerle yardımcı olmak isterseniz "Katkı" başlığı altındaki adımları takip edebilirsiniz. Yardımınızla burada yer alan içeriği daha ileriye taşıyarak, teknik olarak ilerlemenin yanı sıra kapsamlı bir Türkçe kaynak oluşturabiliriz.
-
-Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik olarak arkaplanda yönetmesi ve CMake'e dair kapsam bilgimin az olmasına dayanıyor. Bir açık kaynak projeye katkıda bulunmak veya grafik/GNU arayüzü olmayan bir ortamda geliştirme yapmak istediğimde tekrar tekrar çeşitli içerikleri inceliyorum. Bu sebeple güzel bir kaynak oluşturmanın ve oluşturduğum kaynağı paylaşmanın verimli olduğunu düşündüm. Bu doğrultuda topluluk sayesinde daha nitelikli düzeltmeler alabileceğimi ve teknik gelişimimi ileriye taşıyacağımı düşünüyorum.
+Bu kaynağı **zaman zaman kullandığım CMake'i daha iyi temellendirmek ve Türkçe dilini ön plana çıkarmak amacıyla temel içeriklerden, örneklerden faydalanarak oluşturdum. Bu sebeple çeşitli eksikleri, yanlış kısımları, yazım hataları bulunabilir.** Bu tip hataları fark eder veya yeni içeriklerle yardımcı olmak isterseniz "Katkı" başlığı altındaki adımları takip edebilirsiniz. Yardımınızla burada yer alan içeriği daha ileriye taşıyabilir, teknik olarak herkesin gelişimine katkı sağlayacak kapsamlı bir Türkçe kaynak oluşturabiliriz.
 
 ## İçerik ve Akış
 
 <div align="center">
-    <img src="images/Readme-Images/storysetContent.png" alt="İçerik Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetContent.png" alt="İçerik Kısmının Illustrator Görseli" style="width:40%; height:40%;"/>
     <p><a href="https://storyset.com/illustration/content/cuate">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
-İçerikler temel düzeydedir ve bir ders akışı gibi birbirlerine bağlantılı olarak ilerlemektedir. Sıralı olarak takip etmeniz önerilir. Daha nitelikli bilgi almak ve ileri düzey öğrenmek için resmi dokümantasyonlara göz atmanız önerilir.
+İçerikler temel düzeydedir ve bir ders akışı gibi birbirlerine bağlantılı olarak ilerlemektedir. Sıralı olarak takip etmeniz önerilir. Daha nitelikli bilgi almak ve ileri düzey öğrenmek için resmi dokümantasyonlara göz atabilir, kaynakça olarak verilen bağlantıları değerlendirebilirsiniz.
 
 - [CMake Hakkında Genel Bilgiler](docs/CMakeHakkindaGenelBilgiler.md)
 - [CMake'in Temel Kullanımı](docs/CMakeTemelKullanim.md)
@@ -36,11 +34,11 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 
 Burada yer alan içerikler açık kaynak olarak geliştirilme gayesi taşımaktadır. Katkı sağlamak için çeşitli adımlarla yardımcı olabilirsiniz.
 
-- **Yazım, dil bilgisi, kod, referans gibi noktalarda keşfettiğiniz hata durumlarını bildirmek için** projenin yer aldığı depoya erişerek "Issues" kısmına gidiniz. "New Issue" butonuna tıklayınız. Ardından keşfettiğiniz hatayı, nasıl keşfettiğinizi, düzeltilmesi için ne yapılabileceğini (fikriniz varsa) belirterek kapsamlı olarak açıklayın.
+- **Yazım, dil bilgisi, kod, bağlantı referansı gibi noktalarda keşfettiğiniz hata durumlarını bildirmek için** projenin yer aldığı depoya erişerek "Issues" kısmına gidiniz. "New Issue" butonuna tıklayınız. Ardından keşfettiğiniz hatayı, nasıl keşfettiğinizi, düzeltilmesi için ne yapılabileceğini (fikriniz varsa) belirterek kapsamlı olarak açıklayın.
 
 - **Bir hatayı düzeltmek ve kaynağa katkıda bulunmak için** projenin yer aldığı adrese erişerek proje içeriğini "fork" butonu aracılığıyla kendi hesabınıza klonlayınız. Ardından klonlamış olduğunuz proje dosyaları üzerinde gerekli değişiklikleri gerçekleştiriniz. Geliştirmeyi bitirdikten sonra yaptığınız değişiklikleri kontrol edip, gerekiyorsa test ederek tamamlayınız.
 
-    Ardından projenin adresine erişerek "Pull Request" kısmına ulaşınız. Bu sayfada "New pull request" butonuna tıklayarak kendi değişikliklerinizin mevcut olduğu dalı kullanarak mevcut projeye birleştirme isteği oluşturabilirsiniz. Lütfen birleştirme isteğinizin başlık ve açıklama bilgisini detaylı olarak yazmaya çalışın.
+    Ardından projenin adresine erişerek "Pull Request" kısmına ulaşınız. Bu sayfada "New pull request" butonuna tıklayarak kendi değişikliklerinizin mevcut olduğu dalı kullanarak projeye birleştirme isteği oluşturabilirsiniz. Lütfen birleştirme isteğinizin başlık ve açıklama bilgisini detaylı olarak yazmaya çalışın.
 
 - **Bu desteklerin yanı sıra sponsor olarak projeyi desteklemek için** projenin sağ kısmında yer alan sponsor butonunu kullanabilirsiniz. Elde edilecek olan kazanç mevcut projenin desteklenmesi, yeni projelerin oluşturulması ve kişisel geliştirme motivasyonuna büyük katkı sağlayacaktır.
 

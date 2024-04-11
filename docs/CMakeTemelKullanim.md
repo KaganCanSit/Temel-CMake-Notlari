@@ -7,24 +7,22 @@
 
 ## Ön Hazırlık
 
-İlerleyen süre zarfında gerçekleştirilecek tüm örnekler Linux (Ubuntu 22.04) işletim sistemine sahip bir cihaz aracılığıyla yürütülecek, anlatılacaktır. Fakat küçük bir araştırmayla istediğiniz işletim sisteminde benzer süreçleri yürütebilirsiniz.
+İlerleyen süreçte gerçekleştirilecek tüm örnekler Ubuntu 22.04 dağıtımına sahip Linux işletim sistemi üzerinde yapılmıştır. Ancak benzer adımları küçük bir araştırmayla istediğiniz işletim sisteminde yürütebilirsiniz. Bu konuda yardım almak için CMake'in resmi dokümantasyonlarına ise [burada](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) yer alan bağlantı aracılığıyla ulaşabilirsiniz.
 
-CMake'in resmi dokümantasyonlarına ise [burada](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) yer alan bağlantı aracılığıyla ulaşabilirsiniz.
-
-Kullanım örneğine geçmeden önce çeşitli araçlar ve bileşenlere ihtiyacımız var. Bunlar, C++ kodlarını derleyebilmek ve çalıştırmak için GCC derleyicisini barındıran **build-essential** debian paketi (farklı bir derleyici (Clang vb.) kullanmak isterseniz o derleyiciye ait paket), CMake ile çalışabilmek için ise cmake debian paketine ihtiyacımız var.
+Kullanım örneğine geçmeden önce, C++ kodlarını derlemek ve çalıştırabilmek için GCC derleyicisini içeren **build-essential** debian paketi (farklı bir derleyici (Clang vb.) kullanmak isterseniz o derleyiciye ait paket), CMake ile çalışabilmek için ise **cmake** debian paketine ihtiyacımız var.
 
     sudo apt install build-essential
     sudo apt install cmake
 
 ## Örnek
 
-Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci ilerleteceğiz. Herhangi bir metin editörü veya terminal üzerinden aşağıda yer alan dosya yapısını oluşturarak başlayalım.
+Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci ilerleteceğiz. Herhangi bir metin editörü veya terminal üzerinden aşağıda yer alan dizin yapısını oluşturun.
 
 <div align="center">
-    <img src="../images/CMakeTemelKullanim/FirstExampleDirectory.png" alt="Ilk Örneğin Dizin Yapısı" style="width:40%; height:40%;"/>
+    <img src="../images/CMakeTemelKullanim/FirstExampleDirectory.png" alt="İlk Örneğin Dizin Yapısı" style="width:40%; height:40%;"/>
 </div>
 
-"main.cpp" dosyamınızın içerisine örneğimizi yazarak hazır hale getirelim.
+"main.cpp" dosyasına aşağıdaki kodu ekleyin:
 
     #include <iostream>
 
@@ -33,7 +31,7 @@ Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci iler
         return 0;
     }
 
-CMake direktiflerimizi belirtmek için kök dizininde önceden oluşturduğumuz **"CMakeList.txt"** dosyasını düzenleyelim.
+Kök dizininde önceden oluşturduğumuz **"CMakeList.txt"** dosyasını düzenleyerek CMake direktiflerini belirtin:
 
     cmake_minimum_required(VERSION 3.22.1)
 
@@ -46,30 +44,30 @@ CMake direktiflerimizi belirtmek için kök dizininde önceden oluşturduğumuz 
 
     add_executable(CMakeLearn src/main.cpp)
 
-**CMakeLists.txt** betik diline dair kısa tüyolar;
+**CMakeLists.txt** dosyasında dikkate alınması gereken bazı tüyolar;
 - Yazılan komutlar tek satırda ele alınır.
-- Parametre olarak geçilen içerikler bir dizi olarak kabul edilir. Boşluk içeren değerlerde DESCRIPTION tanımlamasında olduğu gibi tırnak kullanmalısınız.
-- Değişkenlerinizi atama operatörleri değil, set fonksiyonuyla gerçekleştirmelisiniz.
+- Parametre olarak geçilen değerler bir dizi olarak kabul edilir. Boşluk içeren değerlerde tırnak kullanılmaldır.
+- Değişkenlerinizi atama operatörleriyle değil, set fonksiyonuyla belirtin.
 
         set(name "Kağan Can Şit")
 
-- Değişken değerleri yazdırırken dolar işareti, yay ayraç içerisine değişken adını girmelisiniz. 
+- Değişken değerlerinizi yazdırırken ${} yapısını kullanarak değişken adını içeriğe ekleyin. 
 
         message("Merhaba, ben ${name}!")
 
 CMake'in betik dili için nitelikli olarak [bağlantıda](https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/) yer alan kaynağı inceleyebilirsiniz.
 
-Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
+Örneğimize dönecek olursak projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
 
-İlk kısımda bahsettiğimiz kısıtlama ve bağımlıklar için bir örneğimizde olmuş oldu. CMake versiyonunu kısıtlamış olduk. Bu sayede başka bir cihaz veya platformda aynı CMake dosyası kullanılarak proje derlenmeye çalışıldığında versiyon kontrol edilecek ve uyumsuzluk olması durumunda hata alınacaktır. 
+İlk kısımda bahsettiğimiz kısıtlama ve bağımlıklar için bir örnek oluşmuş oldu. CMake versiyonunu belirttiğimiz için, başka cihaz veya platformda aynı CMake dosyası kullanılarak proje derlenmeye çalışıldığında versiyon kontrol edilecek. Uyumsuzluk olması durumunda hata alınacaktır. 
 
-Ayrıca ek olarak aşağıda yer alan iki satırın "CMakeLists.txt" dosyasına eklenmesi durumunda projenin C++17 standardını desteklediği ve derleme işlemi için zorunlu olarak C++17 standardını destekleyen bir derleyiciye sahip olunması gerektiğini belirtebiliriz. Eğer required değeri false olarak set edilirse zorunluluk şartı bulunmayacaktır.
+Ayrıca aşağıda yer alan satırların "CMakeLists.txt" dosyasına eklenmesi durumunda projenin C++17 standardını desteklediği, derleyicinin g++ olması ayrıca C++17 standardını desteklemesi gerektiğini belirtebiliriz. Eğer required değeri false olarak set edilirse zorunluluk şartı bulunmayacaktır.
 
     set(CMAKE_CXX_XOMPILER g++)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-Şimdilik bu tip kısıtlama eklemeyeceğim. Her şeyimiz hazır. Şimdi terminal aracılığıyla build dizine gidelim. Belirlemiş olduğumuz direktifleri (**CMakeLists.txt**) kullanarak CMake'i çalıştıralım. CMake bizler için gerekli dosyaları ve içerikleri oluşturacak, belirlenen direktifleri kontrol edecektir.
+Şimdilik son düzenlemeri dışarıda bırakıyoruz. Her şeyimiz hazır. Terminal aracılığıyla build dizine gidin CMake'i çalıştırın. CMake bizler için gerekli dosyaları ve içerikleri oluşturacak belirlediğimiz direktiflere (**CMakeLists.txt**) göre oluşturacaktır.
 
     cd build/
     cmake ..
@@ -78,9 +76,7 @@ Ayrıca ek olarak aşağıda yer alan iki satırın "CMakeLists.txt" dosyasına 
     <img src="../images/CMakeTemelKullanim/buildDirectory.png" alt="Build dizini ve CMake Komutu" style="width:80%; height:80%;"/>
 </div>
 
-Pekala, şimdi bu komut sonucunda kabaca neler oldu?
-
-CMake varsayılan olarak seçili olan Unix Makefiles standartına uygun olarak yapılandırma dosyalarını ve içeriklerini GNU/GCC 11.4.0 versiyonuna sahip "/usr/bin/cc" dizininde yer alan derleyicimize uygun olarak **build** dizini içerisine otomatik olarak oluşturdu.
+Bu komutun çıktısını incelediğimizde, CMake'in varsayılan olarak seçili olan Unix Makefiles standartına göre yapılandırma dosyalarını ve içeriklerini GNU/GCC 11.4.0 versiyonuna sahip "/usr/bin/cc" dizininde yer alan derleyicimize uygun olarak **build** dizini içerisine otomatik olarak oluşturduğunu görebilirsiniz.
 
 Seçili olan makefile standardını aşağıda yer alan komut aracılığıyla kolaylıkla kontrol edebilirsiniz.
 
@@ -90,7 +86,7 @@ Seçili olan makefile standardını aşağıda yer alan komut aracılığıyla k
     <img src="../images/CMakeHakkindaGenelBilgiler/CMakeHelpCommand.png" alt="CMake Help Komutu" style="width:80%; height:80%;"/>
 </div>
 
-CMake'in oluşturduğu dosya ve içeriklere yukarıdan bir bakış atalım.
+CMake'in oluşturduğu dosya ve içeriklerini inceleyelim.
 
 <div align="center">
     <img src="../images/CMakeTemelKullanim/CMakeOutput.png" alt="CMake Komutu Sonucunda Oluşan Dosyalar" style="width:80%; height:80%;"/>
@@ -100,9 +96,7 @@ CMake'in oluşturduğu dosya ve içeriklere yukarıdan bir bakış atalım.
     <img src="../images/CMakeTemelKullanim/buildCMakeFIlesDirectory.png" alt="CMake Komutu Sonucunda Oluşan Dosyalar" style="width:80%; height:80%;"/>
 </div>
 
-Oluşan yapılandırma dosyalarında önemli bir dosyayı fark ettiniz mi? 
-
-Derleyici ve işletim sistemine uygun olarak belirttiğimiz direktiflere sahip nesneler, geçici/ara dosya içerikleri ve derleme işlemini gerçekleştireceğimiz **Makefile** dosyasını elde etmiş olduk. Bu dosya aracılığıyla artık projemizi "make" komutu aracılığıyla derleyerek çalışabilir hale getirebiliriz.
+Oluşan dosyaları incelediğimizde derleyici ve işletim sistemine uygun olarak belirtilen direktiflere sahip nesneler, geçici/ara dosyalar ve derleme işlemini gerçekleştireceğimiz **Makefile** dosyasının elde edilmiş olduğunu görebiliriz. Bu dosyalar aracılığıyla "make" komutunu kullanarak projeyi derleyebilir ve çalışabilir hale getirebiliriz.
 
     make
 
@@ -110,7 +104,7 @@ Derleyici ve işletim sistemine uygun olarak belirttiğimiz direktiflere sahip n
     <img src="../images/CMakeTemelKullanim/makeCommand.png" alt="Make Komutu" style="width:80%; height:80%;"/>
 </div>
 
-Derleme işlemi tamamlandığında ise **CMakeLists.txt** dosyasında belirttiğimiz gibi dizin içerisinde "CMakeLearn" adıyla yürütülebilir şekilde oluşmuş oldu. Bu dosyayı çalıştırdığımızda ise başarılı bir şekilde "Hello World!" çıktısını elde etmiş olduk!
+Derleme işlemi tamamlandığında **CMakeLists.txt** dosyasında belirtilen dizin içerisinde "CMakeLearn" yürütülebilir dosyası oluştu ve çalıştırdığımızda ise "Hello World!" çıktısını elde etmiş olduk!
 
 ## CMake Kullanarak Farklı Derleyiciler İçin Gerekli Dosyaları Oluşturmak
 
@@ -118,7 +112,7 @@ CMake'in bizlere sağladığı kolaylığı daha iyi anlamak için aynı işleml
 
     sudo apt-get install clang
 
-İlk olarak build dizinimizi temizleyelim ve yeniden Makefile dosyasını oluşturmak için CMake'i kullanalım.
+İlk olarak build dizinin temizleyelim. Ardından yeniden Makefile dosyasını oluşturmak için CMake'i kullanalım.
 
     cd build/
     rm -rf *
@@ -128,7 +122,7 @@ CMake'in bizlere sağladığı kolaylığı daha iyi anlamak için aynı işleml
     <img src="../images/CMakeTemelKullanim/ClangBuild.png" alt="CMake Komutuyla Clang Derleme Dosyalarının Oluşturulması" style="width:80%; height:80%;"/>
 </div>
 
-Cmake komutunun çıktısının incelediğimizde ilk kullanımımızdan farklı olarak compiler olarak Clang 14.0.0. sürümünün, "/usr/bin/clang" dizininden seçildiğini görebilirsiniz. Şimdi make komutunu çalıştırarak, yürütülebilir olarak oluşacak olan "CMakeLearn" dosyamızı elde edelim. Ardından dosyamızı çalıştırarak "Hello, World!" çıktısını alalım.
+Cmake komutunun çıktısının incelediğimizde ilk kullanımımızdan farklı olarak compiler olarak Clang 14.0.0 sürümünün, "/usr/bin/clang" dizininden seçildiğini görebilirsiniz. Şimdi make komutunu çalıştırarak, yürütülebilir olarak oluşacak olan "CMakeLearn" dosyamızı elde edelim. Ardından dosyamızı çalıştırarak "Hello, World!" çıktısını alalım.
 
     make
 
@@ -137,17 +131,17 @@ Cmake komutunun çıktısının incelediğimizde ilk kullanımımızdan farklı 
 </div>
 
 
-Farklı derleyicile için işlem yapmak istediğinizde komut satırı üzerinden parametre geçmek zorunda değilsiniz. Bunun yerine "CMakeLists.txt" dosyasını düzenleyebilir veya terminal üzerinde "CMAKE_GENERATOR" parametresini set edebilirsiniz. Clang için örnek düzenlemeye [bu bağlantıdan](https://stackoverflow.com/questions/7031126/switching-between-gcc-and-clang-llvm-using-cmake) ulaşabilirsiniz.
+Farklı derleyiciler için işlem yapmak istediğinizde komut satırı üzerinden parametre geçmek zorunda değilsiniz. Bunun yerine "CMakeLists.txt" dosyasını düzenleyebilir veya terminal üzerinde "CMAKE_GENERATOR" parametresini set edebilirsiniz. Clang için örnek düzenlemeye [bu bağlantıdan](https://stackoverflow.com/questions/7031126/switching-between-gcc-and-clang-llvm-using-cmake) ulaşabilirsiniz.
 
 # CMake Kullanarak Farklı Yapı Sistemi Kurallarına Uygun Dosyaları Oluşturmak
 
-Şu ana kadar kullandığımız tüm örneklerde make komutuna uygun derleme dosyaları oluşturarak kullandık, buna alternatif olarak genellik gömülü vb. projelerde kullanılan "Ninja" için derleme dosyalarını CMake ile oluşturalım.
+Şu ana kadar kullandığımız tüm örneklerde make komutuna uygun derleme dosyaları oluşturarak kullandık, buna alternatif olarak gömülü vb. projelerde kullanılan "Ninja" için derleme dosyalarını da CMake ile oluşturabilirz.
 
 Bu işlem için Ninja'nın sisteminizde kurulu olması gerekir.
 
     sudo apt-get install ninja-build
 
-İlk olarak build dizinimizi temizleyelim ve yeniden Makefile dosyasını oluşturmak için CMake'i kullanalım.
+İlk olarak build dizinini temizleyelim ve yeniden dosyaları oluşturmak için CMake'i kullanalım.
 
     cd build/
     rm -rf *
@@ -157,7 +151,7 @@ Bu işlem için Ninja'nın sisteminizde kurulu olması gerekir.
     <img src="../images/CMakeTemelKullanim/NinjaBuild.png" alt="Ninja İçin CMake Komutu" style="width:80%; height:80%;"/>
 </div>
 
-Oluşan dosya çıktılarını incelediğimizde yukarıda yer alan çıktılardan farklı olarak ninja için belirlenmiş dosyalarında oluştuğunu görebiliyoruz. Derleme işlemini önceki ninja komutuyla gerçekleştirelim ve yürütülebilir dosyayı çalıştırarak "Hello, World!" çıktısına alalım.
+Oluşan dosya çıktılarını incelediğimizde yukarıda yer alan çıktılardan farklı olarak ninja için belirlenmiş dosyalarında oluştuğunu görebiliyoruz. Derleme işlemini ninja komutuyla gerçekleştirelim ve yürütülebilir dosyayı çalıştırarak "Hello, World!" çıktısına alalım.
 
     ninja
 
@@ -167,14 +161,12 @@ Oluşan dosya çıktılarını incelediğimizde yukarıda yer alan çıktılarda
 
 # Not
 
-Derleme işlemlerinde make ve ninja kullanacağımızı bildiğimiz için bunları tercih etsek de dışarıdan bilmediğiniz bir projeyi derlemek için aşağıdaki şekilde derleyebilirsiniz. Bu sayede farklı durumlarda uygun komutu araştırmak zorunda kalmazsınız.
-
-Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli dosyaları oluşturmuş olmanız gerekiyor.
+Derleme işlemlerinde make ve ninja kullanacağımızın bilgisine sahiptik. Fakat dışarıdan bilmediğiniz bir projeyi derlemek için aşağıdaki yöntemle derleme yapabilirsiniz. Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli dosyaları oluşturmuş olmanız gerekiyor.
 
     cd build/
     cmake --build .
 
-Örnekler sırasında **rm -rf * komutu** kullanılıyor fakat make ve ninja için **help** aracılığıyla gerekli komutları **cmake --build .** ile birlikte kullanabilirsiniz. Örneğin Unix System Files ve make kullanacaksınız;
+Örnekler içerisinde birçok kez **rm -rf * komutu** kullanılıyor. Fakat make ve ninja için **help** aracılığıyla gerekli komutları öğrenerek **cmake --build .** ile birlikte kullanabilirsiniz. Örneğin Unix System Files ve make kullanacaksınız;
 
     cmake --build . --target clean
     cmake --build . --target all

@@ -4,15 +4,15 @@
     <p><a href="https://storyset.com/illustration/software-code-testing/bro">SVG Kaynak Bağlantısı</a></p>
 </div>
 
-Projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenlemeler yaparak örneğimizi bir adım öteye taşıyacak ardından **CMakeLists.txt** dosyamızı düzenleyerek projemizin doğru bir şekilde derlenmesini ve kullanılabilmesini sağlayacağız.
+Projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenlemeler yaparak örneğimizi bir adım öteye taşıyacağız. İlk olarak, dizin yapımıza yeni bir header klasörü ekleyeceğiz ve bu klasörün içine **mylibrary.h** dosyasını oluşturacağız. Ardından src klasörü içinde **mylibrary.cpp** dosyasını oluşturacağız. Son olarak **main.cpp** ve **CMakeLists.txt** dosyamızı güncelleyeceğiz.
 
-İlk olarak CMake dosyamızda değişiklik yapmadan gerekli değişiklikleri yapalım. Dizin yapımızı hatırlayacak olursak;
+Önceki örneğe ait dizin yapımızı hatırlayacak olursak;
 
 <div align="center">
     <img src="../images/CMakeTemelKullanim/FirstExampleDirectory.png" alt="Tree İle Proje Dizini" style="width:50%; height:50%;"/>
 </div>
 
-Şimdi bir header klasörü ve bu klasörün içerisine **mylibrary.h** dosyasını oluşturup aşağıdaki kod parçacığını ekleyeceğiz.
+*mylibrary.h dosyası;*
 
     #ifndef MYLIBRARY_H
     #define MYLIBRARY_H
@@ -23,7 +23,7 @@ Projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenl
 
     #endif
 
-Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını oluşturarak aşağıdaki kod parçacığını ekleyeceğiz.
+*mylibrary.cpp dosyası;*
 
     #include "../header/mylibrary.h"
 
@@ -31,7 +31,7 @@ Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını ol
         std::cout << "Hello from MyLibrary!" << std::endl;
     }
 
-**main.cpp** dosyamızı da güncelliyoruz.
+*main.cpp dosyası;*
 
     #include <iostream>
 
@@ -42,7 +42,7 @@ Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını ol
         return 0;
     }
 
-Şimdi gerekli dosya içeriklerimizi oluşturduk. **CMakeList.txt** dosyamızı güncellemeden **cmake** ve **make** komutunu çalıştıralım ve inceleyelim.
+Şimdi gerekli dosyaları oluşturduk. Ancak, **CMakeList.txt** dosyasında değişiklikler yapmadan önce **cmake** ve **make** komutlarını çalıştırarak mevcut durumu inceleyelim.
 
     cd build/
     cmake ..
@@ -52,9 +52,7 @@ Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını ol
     <img src="../images/CMakeKutuphaneEklemek/CMakeAndMakeCommand.png" alt="CMake ve Make Komutunun Çıktısı" style="width:80%; height:80%;"/>
 </div>
 
-**cmake** komutu herhangi bir hata vermeden çalıştı fakat **make** komutunu kullandığımızda kütüphane header dosyası için bilinmeyen referans hatası aldı. Peki, neden?
-
-**CMakeLists.txt** dosyasını inceleyerek sebebini anlayabiliriz.
+**cmake** komutu herhangi bir hata vermeden çalışırken, **make** komutunu kullandığımızda kütüphane header dosyası için bilinmeyen referans hatası aldık. **CMakeLists.txt** dosyasını inceleyerek hatanın sebebini anlayabiliriz.
 
     cmake_minimum_required(VERSION 3.22.1)
     project(
@@ -65,9 +63,9 @@ Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını ol
     )   
     add_executable(CMakeLearn src/main.cpp)
 
-CMake dosyamızda şu anda nesne içeriklerini ve konfigürasyon dosyalarını oluşturmak için yalnızca **main.cpp** belirtilmiş. Bu sebeple yeni eklediğimiz kütüphane için gerekli olan nesne içerikleri ve diğer dosyalar oluşturulmuyor. Bizlerde **make** komutuyla derleme yapmak istediğimizde eksik içeriğe sahip olan **makefile** ve diğer içerikler sebebiyle hata alıyoruz. Çünkü gerçekten kütüphanemize ait nesne içerikleri derlenme işlemi sırasında build dizininde bulunmuyor.
+Şu anda **CMakeLists.txt** dosyamızda yalnızca **main.cpp** belirtilmiş durumda. Bu nedenle yeni eklediğimiz kütüphane için gerekli olan nesne içerikleri ve diğer dosyalar oluşturulmuyor. **make** komutuyla derleme yapmak istediğimizde eksik içeriğe sahip olan **makefile** ve diğer içerikler sonucunda süreç tamamlanamıyor.
 
-Nesnelerin ve diğer içeriklerin doğru şekilde oluşması için en hızlı çözüm kütüphane için eklediğimiz cpp dosyamızında **add_exectable()** komutuna eklenmesi.
+Nesnelerin ve diğer içeriklerin doğru şekilde oluşması için en hızlı çözüm kütüphane için eklediğimiz cpp dosyamızın **add_exectable()** komutuna eklenmesi.
 
     add_executable(CMakeLearn src/main.cpp src/mylibrary.cpp)
 
@@ -85,7 +83,7 @@ Bunun için CMake'te yer alan **add_library()** fonksiyonunu kullanabiliriz.
         src/mylibrary.cpp
     )
 
-add_library fonksiyonuyla kütüphanenin adını, header ve cpp dosyalarını CMake'e bildiriyoruz. Fakat yürütülebilir olan **main.cpp** ile kütüphaneyi ilişkilendirmedik. Bu sebeple yalnızca bu değişiklik yeterli olmayacaktır. Kütüphaneyi yürütülebilir dosyayla ilişkilendirmek ve linklemek için **target_link_libraries()** fonksiyonunu kullanacağız.
+add_library fonksiyonuyla kütüphanenin adını, header ve cpp dosyalarını CMake'e bildiriyoruz. Kütüphaneyi yürütülebilir dosyayla ilişkilendirmek ve linklemek için **target_link_libraries()** fonksiyonunu kullanacağız.
 
     target_link_libraries(CMakeLearn PRIVATE sayHelloFromMyLibrary)
 
@@ -153,8 +151,6 @@ Bu değişiklikler sonrasında yeniden aynı komutları kullanarak CMake aracıl
 **Not:** Sadece terminal üzerinden düzenleme yaparak kütüphane içeriğinizin SHARED veya STATIC olmasını belirleyebilirsiniz.
 
     cmake -D BUILD_SHARED_LIBS=TRUE .
-
-Temel düzey olan bu içeriklerin yanı sıra daha kapsamlı öğrenmek ve derinlere inmek için CMake'in resmi sitesinde yer alan [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) sayfasına göz atabilirsiniz.
 
 # Kaynakça
 

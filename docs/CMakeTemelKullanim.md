@@ -36,13 +36,20 @@ Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci iler
 CMake direktiflerimizi belirtmek için kök dizininde önceden oluşturduğumuz **"CMakeList.txt"** dosyasını düzenleyelim.
 
     cmake_minimum_required(VERSION 3.22.1)
+
     project(
         CMakeLearn
         VERSION 0.0.1
         DESCRIPTION "CMake Learn Application"
         LANGUAGES CXX
-    )     
+    )
+
     add_executable(CMakeLearn src/main.cpp)
+
+**CMakeLists.txt** betik diline dair kısa tüyolar;
+- Yazılan komutlar tek satırda ele alınır.
+- Parametre olarak geçilen içerikler bir dizi olarak kabul edilir. (Örn; DESCRIPTION tanımlamasında tırnak kullanmazsanız hata alırsınız!)
+- Değişkenlerinizi atama operatörleri değil, set fonksiyonuyla gerçekleştirmelisiniz. (Örn; set(TEST "TestMesssage"))
 
 Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
 
@@ -50,6 +57,7 @@ Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22
 
 Ayrıca ek olarak aşağıda yer alan iki satırın "CMakeLists.txt" dosyasına eklenmesi durumunda projenin C++17 standardını desteklediği ve derleme işlemi için zorunlu olarak C++17 standardını destekleyen bir derleyiciye sahip olunması gerektiğini belirtebiliriz. Eğer required değeri false olarak set edilirse zorunluluk şartı bulunmayacaktır.
 
+    set(CMAKE_CXX_XOMPILER g++)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED true)
 
@@ -170,6 +178,7 @@ Elbette bu işlemi yapabilmeniz için **"cmake .."** komutunu kullanarak gerekli
 * [Difference between invoking `ninja` directly vs through `cmake --build`](https://stackoverflow.com/questions/70855120/difference-between-invoking-ninja-directly-vs-through-cmake-build)
 * [Can you help me understand what the difference of Make, CMake, and Ninja?](https://www.reddit.com/r/embedded/comments/sbhg3q/can_you_help_me_understand_what_the_difference_of/)
 * [ENCSS - CMake hands-on workshop](https://enccs.github.io/cmake-workshop/)
+* [Cmake Temel (Zero to Level0.1)](https://www.youtube.com/watch?v=4rHP7FGYpMY)
 
 <div align="center">
     <a href="CMakeHakkindaGenelBilgiler.md"> < Önceki Sayfaya Dön</a>

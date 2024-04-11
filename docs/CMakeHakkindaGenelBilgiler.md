@@ -53,7 +53,7 @@ CMake'in temel işlevleri şunlardır:
     <p><a href="https://github.com/ENCCS/cmake-workshop/blob/main/content/img/cmake-times.jpg">Akış Çizimi Kaynak Bağlantısı</a></p>
 </div>
 
-# Temel CMake (CMakeList.txt dosyası) Örneği
+# Temel CMake (CMakeLists.txt dosyası) Örneği
 
     # Minimum olması gereken CMake versiyonu
     cmake_minimum_required(VERSION 3.22.1)

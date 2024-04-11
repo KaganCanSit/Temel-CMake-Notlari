@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>CMAKE NOTLARI</h1>
+    <h1>TEMEL CMAKE NOTLARI</h1>
     <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/hello/rafiki">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>

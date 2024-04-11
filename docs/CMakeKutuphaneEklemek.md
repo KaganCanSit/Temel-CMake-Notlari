@@ -57,7 +57,12 @@ Bu işlemin ardından src klasörü içerisinde **mylibrary.cpp** dosyasını ol
 **CMakeLists.txt** dosyasını inceleyerek sebebini anlayabiliriz.
 
     cmake_minimum_required(VERSION 3.22.1)
-    project(CMakeLearn VERSION 0.0.1)      
+    project(
+        CMakeLearn
+        VERSION 0.0.1
+        DESCRIPTION "CMake Learn Application"
+        LANGUAGES CXX
+    )   
     add_executable(CMakeLearn src/main.cpp)
 
 CMake dosyamızda şu anda nesne içeriklerini ve konfigürasyon dosyalarını oluşturmak için yalnızca **main.cpp** belirtilmiş. Bu sebeple yeni eklediğimiz kütüphane için gerekli olan nesne içerikleri ve diğer dosyalar oluşturulmuyor. Bizlerde **make** komutuyla derleme yapmak istediğimizde eksik içeriğe sahip olan **makefile** ve diğer içerikler sebebiyle hata alıyoruz. Çünkü gerçekten kütüphanemize ait nesne içerikleri derlenme işlemi sırasında build dizininde bulunmuyor.
@@ -94,7 +99,12 @@ Bu fonksiyonla birlikte yürütülebilir olan "CMakeLearn" ile sayHelloFromMyLib
 Son durumda oluşan **CMakeLists.txt** dosyamız aşağıdaki gibi olacaktır. 
 
     cmake_minimum_required(VERSION 3.22.1)
-    project(CMakeLearn VERSION 0.0.1)       
+    project(
+        CMakeLearn
+        VERSION 0.0.1
+        DESCRIPTION "CMake Learn Application"
+        LANGUAGES CXX
+    )      
 
     add_library(
         sayHelloFromMyLibrary

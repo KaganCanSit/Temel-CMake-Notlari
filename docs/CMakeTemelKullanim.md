@@ -36,7 +36,12 @@ Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci iler
 CMake direktiflerimizi belirtmek için kök dizininde önceden oluşturduğumuz **"CMakeList.txt"** dosyasını düzenleyelim.
 
     cmake_minimum_required(VERSION 3.22.1)
-    project(CMakeLearn VERSION 0.0.1)      
+    project(
+        CMakeLearn
+        VERSION 0.0.1
+        DESCRIPTION "CMake Learn Application"
+        LANGUAGES CXX
+    )     
     add_executable(CMakeLearn src/main.cpp)
 
 Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.

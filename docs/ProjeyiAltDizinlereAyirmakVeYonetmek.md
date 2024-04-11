@@ -27,7 +27,12 @@ Bu örnek için dış kaynakları kullanacağımız bir **externally** dizini ol
 Şu an kütüphane içeriğimizi bir alt dizine taşıdık. Bu sebeple **ilk oluştuduğumuz ana dizinde bulunan** CMake konfigürasyonumuzu güncelleyerek alt dizini bildirmeliyiz. Bunun için **add_subdirectory()** fonksiyonunu kullanacağız.
 
     cmake_minimum_required(VERSION 3.22.1)
-    project(CMakeLearn VERSION 0.0.1)       
+    project(
+        CMakeLearn
+        VERSION 0.0.1
+        DESCRIPTION "CMake Learn Application"
+        LANGUAGES CXX
+    )   
 
     add_subdirectory(externally/mylibrary)
 

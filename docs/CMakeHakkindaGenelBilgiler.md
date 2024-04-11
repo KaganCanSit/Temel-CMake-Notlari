@@ -36,8 +36,11 @@ CMake'in temel işlevleri şunlardır:
 
 * **Bağımlılıkların Yönetimi:** CMake, projenin bağımlılıklarını (kütüphaneler, kullanılan dil standardı, versiyon zorunlukları vb.) ve dış kütüphaneleri yönetmek içinde kullanılabilir.
 
-        cmake_minimum_required(VERSION 3.22.1)  # Minimum olması gereken CMake versiyonu
-        set(CMAKE_CXX_STANDARD 17)              # Minimum olması gereken C++ standardı
+        # Minimum olması gereken CMake versiyonu
+        cmake_minimum_required(VERSION 3.22.1)
+
+        # Minimum olması gereken C++ standardı
+        set(CMAKE_CXX_STANDARD 17)
 
 * **Proje Dökümantasyonu:** CMake, projenin yapılandırılması ve derlenmesiyle ilgili dökümantasyon oluşturabilir. Bu madde için en güzel örneklerden biri sanırım [doxygen](https://www.doxygen.nl/index.html) olacaktır.
 
@@ -52,10 +55,22 @@ CMake'in temel işlevleri şunlardır:
 
 # Temel CMake (CMakeList.txt dosyası) Örneği
 
-    cmake_minimum_required(VERSION 3.22.1)  # Minimum olması gereken CMake versiyonu
-    project(testApp VERSION 0.0.1)          # Projenin adı ve versiyon numarası
-    set(CMAKE_CXX_STANDARD 17)              # Projenin C++ standart versiyonu
-    add_executable(test testApp.cpp)        # Yürütülebilir dosyanın adı ve derlenecek olan proje dosyası
+    # Minimum olması gereken CMake versiyonu
+    cmake_minimum_required(VERSION 3.22.1)
+    
+    # Projenin adı, versiyon numarası, açıklaması ve kullanılan dil(C++)
+    project(
+        CMakeLearn
+        VERSION 0.0.1
+        DESCRIPTION "CMake Learn Application"
+        LANGUAGES CXX
+    )
+
+    # Projenin C++ standart versiyonu
+    set(CMAKE_CXX_STANDARD 17)
+    
+    # Yürütülebilir dosyanın adı ve derlenecek olan dosya
+    add_executable(test testApp.cpp)
 
 # Kaynakça
 

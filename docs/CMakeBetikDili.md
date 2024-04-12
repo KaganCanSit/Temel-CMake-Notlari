@@ -108,14 +108,24 @@ Burada **SET** fonksiyonuyla ile **USER** değişkeni dosya içerisinde de atana
 
 ## İfadelerin Her Biri Komut Kabul Edilir ve Geri Dönüş Değerleri Bulunmaz
 
-Bash script gibi diğer betik dillerinin aksine işlem sonucunda geriye değer döndürülmez. Komutların parametrelerin listesini alır. Parametreler genellikle boşluk karakterleriyle birbirinden ayrılır.
+Komutlar parametrelerin listesini alır ve işlem sonucunda geriye değer döndürülmez.  Parametreler boşluk karakterleriyle birbirinden ayrılır. Bir komutun genel yapısı şu şekildedir;
 
-    set(TEST "Test Data") # Doğru şekilde parametreler ayrılmıştır.
-    
-    set(TEST, "Test Data") # X Kullanılmaz
-    set(TEST; "Test Data") # X Kullanılmaz
+    komut_ismi(Parametre Listesi)
 
-Geri dönüş değeri alınabilmesi için C VE C++ dillerinde kullandığımız adresci iletilmesine benzer bir yönetem kullanılır. Bu durumu incelemek için aşağıdaki örneği inceleyebilirsiniz;
+Parametreler birbirlerinde boşluklar ile ayrılır.
+
+    set(TEST "Test Data") # Doğru şekilde boşluk ile parametreler ayrılmıştır.
+
+**İki komut tek satırda yan yana kullanılamaz.** Fakat  varsayılan satırda komutun solunda veya sağında bulunan boşluklar çoğu durumda önemsizdir.
+
+            komut_ismi(Parametre Listesi)
+
+    komut_ismi(
+        Parametre1
+        Parametre2
+    )
+
+Geri dönüş değeri alınabilmesi için C ve C++ dillerinde kullandığımız adresci iletilmesine benzer bir yöntem kullanılır. Bu durumu için aşağıdaki örneği inceleyebilirsiniz;
 
 Matematiksel işlemleri gerçekleştirmek üzere **math** komutu bulunur. İlk argüman **EXPR**, ikinci argüman **sonucun atanacağı değişken**, üçüncü argüman ise gerçekleştirilmek istenen ifadedir.
 
@@ -216,6 +226,19 @@ CMake dosyamızda **add_executable**, **add_library**, **add_custom_target** gib
 <div align="center">
     <img src="../images/CMakeLanguage/GettingAndSettingProperties.png" alt="Fonksiyon Örneği" style="width:80%; height:80%;"/>
 </div>
+
+## Yorum Satırı
+
+*Tek satırda yorum eklemek için;*
+
+    # Bu bir yorum satırıdır.
+
+*Birden fazla satırı kapsayan yorum eklemek için;*
+
+    #[[
+        Birden fazla satırı kapsayan
+        yorum satırı
+    ]]
 
 # Kaynakça
 

@@ -1,7 +1,7 @@
 
 <div align="center">
     <h1>CMake'in Temel Kullanımı</h1>
-    <img src="../images/CMakeTemelKullanim/start.svg" alt="İçerik Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="../images/CMakeTemelKullanim/start.svg" alt="İçerik Başlığının Üst Görseli" style="width:60%; height:60%;"/>
     <p><a href="https://storyset.com/illustration/launching/amico">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 

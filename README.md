@@ -10,6 +10,8 @@ Ben Kağan, kendi halinde bir geliştiriciyim. Yazılım ve teknoloji üzerine z
 
 Bu kaynağı **zaman zaman kullandığım CMake'i daha iyi temellendirmek ve Türkçe dilini ön plana çıkarmak amacıyla temel içeriklerden, örneklerden faydalanarak oluşturdum. Bu sebeple çeşitli eksikleri, yanlış kısımları, yazım hataları bulunabilir.** Bu tip hataları fark eder veya yeni içeriklerle yardımcı olmak isterseniz "Katkı" başlığı altındaki adımları takip edebilirsiniz. Yardımınızla burada yer alan içeriği daha ileriye taşıyabilir, teknik olarak herkesin gelişimine katkı sağlayacak kapsamlı bir Türkçe kaynak oluşturabiliriz.
 
+Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik olarak arkaplanda yönetmesi ve CMake'e dair kapsam bilgimin az olmasına dayanıyor. Bir açık kaynak projeye katkıda bulunmak veya grafik/GNU arayüzü olmayan bir ortamda geliştirme yapmak istediğimde tekrar tekrar çeşitli içerikleri inceliyorum. Bu sebeple güzel bir kaynak oluşturmanın ve oluşturduğum kaynağı paylaşmanın verimli olduğunu düşündüm. Bu doğrultuda topluluk sayesinde daha nitelikli düzeltmeler alabileceğimi ve teknik gelişimimi ileriye taşıyacağımı düşünüyorum.
+
 ## İçerik ve Akış
 
 <div align="center">

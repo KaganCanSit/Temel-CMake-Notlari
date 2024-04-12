@@ -101,7 +101,7 @@ Bu düzenlemeler sonucunda projemizin modüler yapısını daha iyi organize ede
 * [How to CMake Good - 1c - Subdirectories and Target Interface Properties](https://www.youtube.com/watch?v=SYgESCQeGJY)
 
 <div align="center">
-    <a href="CMakeKutuphaneEklemek.md"> < Ana Sayfaya Dön</a>
+    <a href="CMakeKutuphaneEklemek.md"> < Önceki Sayfaya Dön</a>
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
     <a href="CMakeDili.md"> Sonraki Sayfaya İlerle ></a>
 </div>

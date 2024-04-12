@@ -165,7 +165,7 @@ Bu değişiklikler sonrasında yeniden aynı komutları kullanarak CMake aracıl
 * [How to CMake Good - 1b - Adding a Library](https://youtu.be/abuCXC3t6eQ?si=7pXmDg5BHh17Zbsn)
 
 <div align="center">
-    <a href="CMakeTemelKullanim.md"> < Ana Sayfaya Dön</a>
+    <a href="CMakeTemelKullanim.md"> < Önceki Sayfaya Dön</a>
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
     <a href="ProjeyiAltDizinlereAyirmakVeYonetmek.md"> Sonraki Sayfaya İlerle ></a>
 </div>

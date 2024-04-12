@@ -103,5 +103,5 @@ Bu düzenlemeler sonucunda projemizin modüler yapısını daha iyi organize ede
 <div align="center">
     <a href="CMakeKutuphaneEklemek.md"> < Önceki Sayfaya Dön</a>
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
-    <a href="CMakeDili.md"> Sonraki Sayfaya İlerle ></a>
+    <a href="CMakeBetikDili.md"> Sonraki Sayfaya İlerle ></a>
 </div>

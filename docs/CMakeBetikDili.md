@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>CMake Dili</h1>
+    <h1>CMake'in Betik Dili</h1>
     <img src="../images/CMakeLanguage/languages.svg" alt="CMake Resmi Logosu" style="width:60%; height:60%;"/>
     <p><a href="https://storyset.com/illustration/learning-languages/bro">SVG Kaynak Bağlantısı</a></p>
 </div>

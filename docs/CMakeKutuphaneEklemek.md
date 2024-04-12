@@ -4,13 +4,17 @@
     <p><a href="https://storyset.com/illustration/software-code-testing/bro">SVG Kaynak Bağlantısı</a></p>
 </div>
 
-Projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenlemeler yaparak örneğimizi bir adım öteye taşıyacağız. İlk olarak, dizin yapımıza yeni bir header klasörü ekleyeceğiz ve bu klasörün içine **mylibrary.h** dosyasını oluşturacağız. Ardından src klasörü içinde **mylibrary.cpp** dosyasını oluşturacağız. Son olarak **main.cpp** ve **CMakeLists.txt** dosyamızı güncelleyeceğiz.
+Bu adımda projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenlemeler yaparak örneğimizi bir adım öteye taşıyacağız. İlk olarak, dizin yapımıza yeni bir header klasörü ekleyeceğiz ve bu klasörün içine **mylibrary.h** dosyasını oluşturacağız. Ardından src klasörü içinde **mylibrary.cpp** dosyasını oluşturacağız. Son olarak **main.cpp** ve **CMakeLists.txt** dosyamızı güncelleyeceğiz.
 
-Önceki örneğe ait dizin yapımızı hatırlayacak olursak;
+*Son durumda olması gereken dizin yapısı;*
 
-<div align="center">
-    <img src="../images/CMakeTemelKullanim/FirstExampleDirectory.png" alt="Tree İle Proje Dizini" style="width:50%; height:50%;"/>
-</div>
+    ├── build
+    ├── CMakeLists.txt
+    ├── header
+    │   └── mylibrary.h
+    └── src
+        └── main.cpp
+        └── mylibrary.cpp
 
 *mylibrary.h dosyası;*
 
@@ -63,7 +67,7 @@ Projemizi geliştirmek ve CMake'i daha iyi kavrayabilmek için çeşitli düzenl
     )   
     add_executable(CMakeLearn src/main.cpp)
 
-Şu anda **CMakeLists.txt** dosyamızda yalnızca **main.cpp** belirtilmiş durumda. Bu nedenle yeni eklediğimiz kütüphane için gerekli olan nesne içerikleri ve diğer dosyalar oluşturulmuyor. **make** komutuyla derleme yapmak istediğimizde eksik içeriğe sahip olan **makefile** ve diğer içerikler sonucunda süreç tamamlanamıyor.
+Şu anda **CMakeLists.txt** dosyamızda yalnızca **main.cpp** belirtilmiş durumda, yeni eklediğimiz kütüphane için gerekli olan nesne içerikleri ve diğer dosyalar oluşturulmuyor. **make** komutuyla derleme yapmak istediğimizde eksik içeriğe sahip olan **makefile** ve diğer içerikler sonucunda süreç tamamlanamıyor.
 
 Nesnelerin ve diğer içeriklerin doğru şekilde oluşması için en hızlı çözüm kütüphane için eklediğimiz cpp dosyamızın **add_exectable()** komutuna eklenmesi.
 
@@ -73,7 +77,7 @@ Nesnelerin ve diğer içeriklerin doğru şekilde oluşması için en hızlı ç
     <img src="../images/CMakeKutuphaneEklemek/AddingAddExecutableFunction.png" alt="Executable Fonksiyonuna Ekleme Yapıldıktan Sonra" style="width:80%; height:80%;"/>
 </div>
 
-**Fakat bu yöntem sağlıklı bir çözüm yolu değil.** Kütüphane olarak ekleyeceğimiz tüm içerikleri executable fonksiyonuyla takip ederek kütüphaneler arasındaki ilişkileri yönetemeyiz.
+**Fakat bu yöntem sağlıklı bir çözüm yolu değil.** Kütüphane olarak ekleyeceğimiz tüm içerikleri executable fonksiyonuyla takip ederek kütüphaneler arasındaki ilişkileri, derleme bağımlılıklarını yönetemeyiz.
 
 Bunun için CMake'te yer alan **add_library()** fonksiyonunu kullanabiliriz.
 

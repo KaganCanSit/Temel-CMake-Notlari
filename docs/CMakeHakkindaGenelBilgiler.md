@@ -27,7 +27,7 @@ CMake, çeşitli yapılandırma ve spesifik ayarları dizine özgü olarak oluş
 
 CMake'in temel işlevleri şunlardır:
 
-* **Proje Yapılandırması:** CMake, projenin gerekli derleme ortamını (derleyici, bağımlılıklar) tanımlar ve yapılandırır. Gerçekleştirilen tanımlamalar kodun taşınabilirliğini arttırarak diğer platformlarda çalışma ve analiz edilebilme kabiliyetini arttırır. Terminal üzerinden "**cmake --help**" komutu aracılığıyla gelen menüyü incelerseniz. Farklı derleyeciler için CMake'i kullanabileceğinizi görüntüleyebilirsiniz.
+* **Proje Yapılandırması:** CMake, projenin gerekli derleme ortamını (derleyici, bağımlılıklar) tanımlar ve yapılandırır. Gerçekleştirilen tanımlamalar kodun taşınabilirliğini arttırarak diğer platformlarda çalışma ve analiz edilebilme kabiliyetini arttırır. Terminal üzerinden "**cmake --help**" komutu aracılığıyla gelen menüyü incelerseniz, farklı standartlar için CMake'i kullanabileceğinizi görüntüleyebilirsiniz.
 
 <div align="center">
     <img src="../images/CMakeHakkindaGenelBilgiler/CMakeHelpCommand.png" alt="CMake Help Komutundan Bir Kısım" style="width:80%; height:80%;"/>
@@ -35,7 +35,7 @@ CMake'in temel işlevleri şunlardır:
 
 * **Makefile Oluşturma:** CMake, projenin derleme işlemlerini otomatikleştirmek için platforma özgü olarak Makefile ve ek dosyalarını (Örn; Visual Studio proje dosyaları, Xcode proje dosyaları vb.) otomatik olarak oluşturur. Geliştirme sürecini kolaylaştırarak, hata yapılması ihtimalini düşürür.
 
-* **Bağımlılıkların Yönetimi:** CMake, projenin bağımlılıklarını (kütüphaneler, kullanılan dil standardı, versiyon zorunlukları vb.) ve dış kütüphaneleri yönetmek içinde kullanılabilir.
+* **Bağımlılıkların Yönetimi:** CMake, projenin bağımlılıklarını (kütüphaneler, kullanılan dil standardı, versiyon zorunlukları vb.), dış kütüphaneleri yönetmek içinde kullanılabilir.
 
         # Minimum olması gereken CMake versiyonu
         cmake_minimum_required(VERSION 3.22.1)
@@ -43,7 +43,7 @@ CMake'in temel işlevleri şunlardır:
         # Minimum olması gereken C++ standardı
         set(CMAKE_CXX_STANDARD 17)
 
-* **Proje Dökümantasyonu:** CMake, projenin yapılandırılması ve derlenmesiyle ilgili dökümantasyon oluşturabilir. Bu madde için en güzel örneklerden biri sanırım [doxygen](https://www.doxygen.nl/index.html) olacaktır.
+* **Proje Dökümantasyonu:** CMake, projenin yapılandırılması ve derlenmesiyle ilgili dökümantasyon oluşturabilir. Bu madde için çeşitli örnekler bulunmaktadır. Genel olarak kullanılan örnek bir araç vermek gerekirse [doxygen](https://www.doxygen.nl/index.html) verilebilir.
 
 * **Testlerin Yürütülmesi:** CMake, projenin testlerini otomatikleştirmek ve yürütmek için de kullanılabilir. 
 

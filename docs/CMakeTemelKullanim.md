@@ -7,7 +7,7 @@
 
 ## Ön Hazırlık
 
-İlerleyen süreçte gerçekleştirilecek tüm örnekler Ubuntu 22.04 dağıtımına sahip Linux işletim sistemi üzerinde yapılmıştır. Ancak benzer adımları küçük bir araştırmayla istediğiniz işletim sisteminde yürütebilirsiniz. Bu konuda yardım almak için CMake'in resmi dokümantasyonlarına ise [burada](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) yer alan bağlantı aracılığıyla ulaşabilirsiniz.
+İlerleyen süreçte gerçekleştirilecek tüm örnekler Ubuntu 22.04 dağıtımına sahip Linux işletim sistemi üzerinde yapılmıştır. Ancak benzer adımları küçük bir araştırmayla istediğiniz işletim sisteminde yürütebilirsiniz.
 
 Kullanım örneğine geçmeden önce, C++ kodlarını derlemek ve çalıştırabilmek için GCC derleyicisini içeren **build-essential** debian paketi (farklı bir derleyici (Clang vb.) kullanmak isterseniz o derleyiciye ait paket), CMake ile çalışabilmek için ise **cmake** debian paketine ihtiyacımız var.
 
@@ -44,30 +44,17 @@ Kök dizininde önceden oluşturduğumuz **"CMakeList.txt"** dosyasını düzenl
 
     add_executable(CMakeLearn src/main.cpp)
 
-**CMakeLists.txt** dosyasında dikkate alınması gereken bazı tüyolar;
-- Yazılan komutlar tek satırda ele alınır.
-- Parametre olarak geçilen değerler bir dizi olarak kabul edilir. Boşluk içeren değerlerde tırnak kullanılmaldır.
-- Değişkenlerinizi atama operatörleriyle değil, set fonksiyonuyla belirtin.
+Projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosyanın src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
 
-        set(name "Kağan Can Şit")
+İlk kısımda bahsettiğimiz kısıtlama ve bağımlıklar için örnek durum oluşmuş oldu. CMake versiyonunu belirttiğimiz için, başka cihaz veya platformda aynı CMake dosyası kullanılarak proje derlenmeye çalışıldığında versiyon uyumsuzluğu söz konusuysa hata alınacaktır. 
 
-- Değişken değerlerinizi yazdırırken ${} yapısını kullanarak değişken adını içeriğe ekleyin. 
-
-        message("Merhaba, ben ${name}!")
-
-CMake'in betik dili için nitelikli olarak [bağlantıda](https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/) yer alan kaynağı inceleyebilirsiniz.
-
-Örneğimize dönecek olursak projemizin derlenmesi ve kullanılabilmesi için minimum CMake versiyonunun 3.22.1 olması gerektiğini, projemizin adının CMakeLearn ve versiyonun 0.0.1 olduğunu, projeye dair yürütülebilir dosya ekleneceğini ve bu dosyanın kaynak olarak src altında yer alan main.cpp aracılığıyla oluşturularak CMakeLearn adıyla kaydedilmesini belirlemiş olduk.
-
-İlk kısımda bahsettiğimiz kısıtlama ve bağımlıklar için bir örnek oluşmuş oldu. CMake versiyonunu belirttiğimiz için, başka cihaz veya platformda aynı CMake dosyası kullanılarak proje derlenmeye çalışıldığında versiyon kontrol edilecek. Uyumsuzluk olması durumunda hata alınacaktır. 
-
-Ayrıca aşağıda yer alan satırların "CMakeLists.txt" dosyasına eklenmesi durumunda projenin C++17 standardını desteklediği, derleyicinin g++ olması ayrıca C++17 standardını desteklemesi gerektiğini belirtebiliriz. Eğer required değeri false olarak set edilirse zorunluluk şartı bulunmayacaktır.
+Ayrıca aşağıda yer alan satırların "CMakeLists.txt" dosyasına eklenmesi durumunda projenin C++17 standardını desteklediği, derleyicinin g++ olması ve C++17 standardını desteklemesi gerektiğini belirtebiliriz. Eğer required değeri false olarak set edilirse zorunluluk şartı bulunmayacaktır.
 
     set(CMAKE_CXX_XOMPILER g++)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-Şimdilik son düzenlemeri dışarıda bırakıyoruz. Her şeyimiz hazır. Terminal aracılığıyla build dizine gidin CMake'i çalıştırın. CMake bizler için gerekli dosyaları ve içerikleri oluşturacak belirlediğimiz direktiflere (**CMakeLists.txt**) göre oluşturacaktır.
+Şimdilik bu düzenlemeri dışarıda bırakıyoruz. Her şeyimiz hazır. Terminal aracılığıyla build dizine giderek CMake'i çalıştırın. CMake derleme işlemi için gerekli olan dosyaları ve içerikleri belirlediğimiz direktiflere (**CMakeLists.txt**) göre oluşturacaktır.
 
     cd build/
     cmake ..
@@ -96,7 +83,7 @@ CMake'in oluşturduğu dosya ve içeriklerini inceleyelim.
     <img src="../images/CMakeTemelKullanim/buildCMakeFIlesDirectory.png" alt="CMake Komutu Sonucunda Oluşan Dosyalar" style="width:80%; height:80%;"/>
 </div>
 
-Oluşan dosyaları incelediğimizde derleyici ve işletim sistemine uygun olarak belirtilen direktiflere sahip nesneler, geçici/ara dosyalar ve derleme işlemini gerçekleştireceğimiz **Makefile** dosyasının elde edilmiş olduğunu görebiliriz. Bu dosyalar aracılığıyla "make" komutunu kullanarak projeyi derleyebilir ve çalışabilir hale getirebiliriz.
+Oluşan dosyaları incelediğimizde derleyici ve işletim sistemine uygun olarak belirtilen direktiflere sahip nesneler, geçici/ara dosyalar ve derleme işlemini gerçekleştireceğimiz **Makefile** dosyasının elde edildiğini görebiliriz. Bu dosyalar aracılığıyla "make" komutunu kullanarak projeyi derleyebilir ve çalışabilir hale getirebiliriz.
 
     make
 

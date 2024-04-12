@@ -18,9 +18,10 @@ Kullanım örneğine geçmeden önce, C++ kodlarını derlemek ve çalıştırab
 
 Temel CMake kullanımını görmek için basit bir C++ kodu yazarak süreci ilerleteceğiz. Herhangi bir metin editörü veya terminal üzerinden aşağıda yer alan dizin yapısını oluşturun.
 
-<div align="center">
-    <img src="../images/CMakeTemelKullanim/FirstExampleDirectory.png" alt="İlk Örneğin Dizin Yapısı" style="width:40%; height:40%;"/>
-</div>
+    ├── build
+    ├── CMakeLists.txt
+    └── src
+        └── main.cpp
 
 "main.cpp" dosyasına aşağıdaki kodu ekleyin:
 

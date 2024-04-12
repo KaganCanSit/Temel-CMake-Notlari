@@ -12,15 +12,27 @@ CMake, projenizi alt dizinlere ayırmanıza ve yönetmenize olanak tanır. Her a
 
 Bu dokümanda önceki örneğimizde oluşturduğumuz kütüphane içeriğini bir klasör altında modül olarak ele alıp, **CMake** konfigürasyonumuzu bu doğrultuda düzenlemeye çalışacağız. Dizin yapımız son düzenlemelerle aşağıdaki şekilde oluşmuştu. Şimdi ekledeğimiz kütüphanenin ayrı olarak kendi dizini altında yer alacağını farzederek düzenleme yapalım.
 
-<div align="center">
-    <img src="../images/ProjeyiAltDizilereAyirmakVeYonetmek/treeDirectoryOutput.png" alt="Klasörün Yapısının Tree Komutuyla Gösterimi" style="width:80%; height:80%;"/>
-</div>
+    ├── build
+    ├── CMakeLists.txt
+    ├── header
+    │   └── mylibrary.h
+    └── src
+        └── main.cpp
+        └── mylibrary.cpp
 
 Bu örnek için dış kaynakları kullanacağımız bir **externally** dizini oluşturup, ardından bu dizinin içerisine **mylibrary** adında bir dizin daha oluşturalım. **mylibrary.h** ve **mylirary.cpp** içeriklerini src ve header dizinleri içerisine alarak taşıyalım. Son olarak kütüphanemizin yapısını ve derlenmesi belirlemek için **mylibrary** dizini içerisine ana yapıda bulunan CMake dosyamızdan farklı olarak bir **CMakeLists.txt** dosyası daha oluşturalım.
 
-<div align="center">
-    <img src="../images/ProjeyiAltDizilereAyirmakVeYonetmek/newDirectory.png" alt="Düzenlenmiş Klasör Yapısının Tree Komutuyla Gösterimi" style="width:80%; height:80%;"/>
-</div>
+    ├── build
+    ├── CMakeLists.txt
+    ├── externally
+    │    ├── CMakeLists.txt
+    │    ├── header
+    │    │   └── mylibrary.h
+    │    └── src
+    │        └── mylibrary.cpp
+    ├── header
+        └── src
+            └── main.cpp
 
 **Örnek olması adına dizin yapımızı bu şekilde hazırladık. Sizler kendi projenize uygun yapıyı oluşturabilirsiniz.**
 

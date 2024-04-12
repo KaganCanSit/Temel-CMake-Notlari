@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Projeyi Alt Dizinlere Ayırmak Ve Yönetmek</h1>
-    <img src="../images/ProjeyiAltDizilereAyirmakVeYonetmek/CodeSnippets.svg" alt="Başlık Görseli" style="width:50%; height:50%;"/>
+    <img src="../images/ProjeyiAltDizilereAyirmakVeYonetmek/CodeSnippets.svg" alt="Başlık Görseli" style="width:60%; height:60%;"/>
     <p><a href="https://storyset.com/illustration/code-snippets/pana">SVG Kaynak Bağlantısı</a></p>
 </div>
 
@@ -103,5 +103,5 @@ Bu düzenlemeler sonucunda projemizin modüler yapısını daha iyi organize ede
 <div align="center">
     <a href="CMakeKutuphaneEklemek.md"> < Ana Sayfaya Dön</a>
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
-    <a href="CMakeinBetikDili.md"> Sonraki Sayfaya İlerle ></a>
+    <a href="CMakeDili.md"> Sonraki Sayfaya İlerle ></a>
 </div>

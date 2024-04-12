@@ -1,6 +1,6 @@
 <div align="center">
     <h1>CMake Konfigürasyonuna Kütüphane Eklemek</h1>
-    <img src="../images/CMakeKutuphaneEklemek/HeaderImage.svg" alt="Başlık Görseli" style="width:50%; height:50%;"/>
+    <img src="../images/CMakeKutuphaneEklemek/HeaderImage.svg" alt="Başlık Görseli" style="width:60%; height:60%;"/>
     <p><a href="https://storyset.com/illustration/software-code-testing/bro">SVG Kaynak Bağlantısı</a></p>
 </div>
 

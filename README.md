@@ -1,6 +1,6 @@
 <div align="center">
     <h1>TEMEL CMAKE NOTLARI</h1>
-    <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:50%; height:50%;"/>
+    <img src="images/Readme-Images/storysetHello.png" alt="Giriş ve Tanışma Başlığının Üst Görseli" style="width:60%; height:60%;"/>
     <p><a href="https://storyset.com/illustration/hello/rafiki">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -15,7 +15,7 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 ## İçerik ve Akış
 
 <div align="center">
-    <img src="images/Readme-Images/storysetContent.png" alt="İçerik Kısmının Illustrator Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetContent.png" alt="İçerik Kısmının Illustrator Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/content/cuate">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -25,13 +25,13 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 - [CMake'in Temel Kullanımı](docs/CMakeTemelKullanim.md)
 - [CMake Konfigürasyonuna Kütüphane Eklemek](docs/CMakeKutuphaneEklemek.md)
 - [Projeyi Alt Dizinlere Ayırmak Ve Yönetmek](docs/ProjeyiAltDizinlereAyirmakVeYonetmek.md)
-- [CMake'in Betik Dili](docs/CMakeinBetikDili.md)
+- [CMake Dili](docs/CMakeDili.md)
 - [İleri Düzey Konular](docs/ileri_duzey_konular.md)
 
 ## Katkı
 
 <div align="center">
-    <img src="images/Readme-Images/storysetContribute.svg" alt="Katkı Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetContribute.svg" alt="Katkı Başlığının Üst Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/website-creator/bro">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -53,7 +53,7 @@ Burada yer alan içerikler açık kaynak olarak geliştirilme gayesi taşımakta
 ## Lisans
 
 <div align="center">
-    <img src="images/Readme-Images/storysetCertification.png" alt="Lisans Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetCertification.png" alt="Lisans Başlığının Üst Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/certification/bro">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 
@@ -62,7 +62,7 @@ Bu proje GNU General Public License v3.0 altında lisanslanmıştır. Açık kay
 ## İletişim
 
 <div align="center">
-    <img src="images/Readme-Images/storysetContact.png" alt="Iletişim Başlığının Üst Görseli" style="width:40%; height:40%;"/>
+    <img src="images/Readme-Images/storysetContact.png" alt="Iletişim Başlığının Üst Görseli" style="width:50%; height:50%;"/>
     <p><a href="https://storyset.com/illustration/mailbox/bro">İllüstrasyon Kaynak Bağlantısı</a></p>
 </div>
 

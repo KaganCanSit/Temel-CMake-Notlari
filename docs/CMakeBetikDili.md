@@ -10,7 +10,7 @@ Burada yer alan içeriğin dayandığı temel kaynak [bu bağlantıda](https://p
 
 ## **Mesaj/Log İçeriklerini Yazdırmak**
 
-Öncelikle, bir dizin oluşturup içine "merhaba.txt" adında bir dosya ekleyelim ve içine yazdığımız mesajı görmek için bir örnek yapalım:
+Öncelikle, bir dizin oluşturup içine "merhaba.txt" adında bir dosya ekleyelim. Ardından mesaj/log içeriğini görüntülemek için bir örnek yapalım:
 
     CMakeLanguage/
         └── merhaba.txt
@@ -31,11 +31,11 @@ Terminal aracılığıyla **cmake** komutu **-P** komutuyla çalıştırın.
 
 CMake'de değişkenler bir dizi olarak kabul edilir. Atama operatörleriyle değişken değeri atanamaz. Bunun yerine **set** fonksiyonu kullanılır.
 
-    set(testParameter "Bugun nasilsin?")
+    set(TEST_DATA "Bugun nasilsin?")
 
 Bir değişken yazdırılırken **${}** ile çevrelenir.
 
-    message("Merhaba Dunya, ${testParameter}")
+    message("Merhaba Dunya, ${TEST_DATA}")
 
 <div align="center">
     <img src="../images/CMakeLanguage/parameterExample.png" alt="Parametre Örneği"   style="width:80%; height:80%;"/>
@@ -88,11 +88,28 @@ Tırnak ile atanmamış değerleri foreach kullanarak alt alta yazdırabilir vey
         message("${ARG}")
     endforeach()
 
+*Örnek*
+
+    set_property(
+        GLOBAL
+        PROPERTY TEST
+        "Test"
+        "Data"
+        "147852369"
+    )
+
+    get_cmake_property(testData TEST)
+    message("Test Degeri: "${testData})
+
+*Çıktı:*
+     
+    Test Degeri: Test;Data;147852369
+
 **CMake'in genel akışında kullanım için tırnak kullanarak içeriklerin yazılması önerilir. Fakat karşılaştığınız süreçlerin çözümünde burada bahsedilen farkı kullanarak çözüm üretebilirsiniz.**
 
 ## Sınıf ve Değişken Yapısı Bulunmaz
 
-Sınıf ve farklı tipte değişkenler kullanılamadığı için iç içe geçmiş değişken referanslarını kullanabilirsiniz.
+Sınıf ve farklı tipte değişkenler kullanılamadığı için iç içe geçmiş değişken referanslarını kullanabilirsiniz. Fakat unutulmaması gereken bazı işlevler için CMAKE'e ait özel özellik tanımları bulunmaktadır. Örneğin **set_property** fonksiyonuna bir dizin belirtmek için özellik türünü **DIRECTORY** belirleyebilirsiniz.
 
     set(KAGAN_FULL_NAME "Kagan Can Sit")
     set(KAGAN_LIVE_COUNTRY "Turkiye")
@@ -104,7 +121,7 @@ Sınıf ve farklı tipte değişkenler kullanılamadığı için iç içe geçmi
     <img src="../images/CMakeLanguage/noClassExample.png" alt="Değişken Referansı Örneği" style="width:80%; height:80%;"/>
 </div>
 
-Burada **SET** fonksiyonuyla ile **USER** değişkeni dosya içerisinde de atanabilirdi.
+Burada **SET** fonksiyonuyla **USER** değişkeni dosya içerisinde de atanabilirdi.
 
 ## İfadelerin Her Biri Komut Kabul Edilir ve Geri Dönüş Değerleri Bulunmaz
 
@@ -114,18 +131,22 @@ Komutlar parametrelerin listesini alır ve işlem sonucunda geriye değer dönd�
 
 Parametreler birbirlerinde boşluklar ile ayrılır.
 
-    set(TEST "Test Data") # Doğru şekilde boşluk ile parametreler ayrılmıştır.
+    set(TEST "Test Data")
 
 **İki komut tek satırda yan yana kullanılamaz.** Fakat  varsayılan satırda komutun solunda veya sağında bulunan boşluklar çoğu durumda önemsizdir.
 
+*Örnek*
+
             komut_ismi(Parametre Listesi)
+
+*Örnek*
 
     komut_ismi(
         Parametre1
         Parametre2
     )
 
-Geri dönüş değeri alınabilmesi için C ve C++ dillerinde kullandığımız adresci iletilmesine benzer bir yöntem kullanılır. Bu durumu için aşağıdaki örneği inceleyebilirsiniz;
+Geri dönüş değeri alınabilmesi için C ve C++ dillerinde kullandığımız adresci iletilmesine benzer bir yöntem kullanılır. Bu durumu için aşağıdaki matematiksel fonksiyon örneğini inceleyebilirsiniz;
 
 Matematiksel işlemleri gerçekleştirmek üzere **math** komutu bulunur. İlk argüman **EXPR**, ikinci argüman **sonucun atanacağı değişken**, üçüncü argüman ise gerçekleştirilmek istenen ifadedir.
 
@@ -155,6 +176,92 @@ Benzer bir if şartı örneği;
 <div align="center">
     <img src="../images/CMakeLanguage/ifExample.png" alt="İf Örneği" style="width:80%; height:80%;"/>
 </div>
+
+*Örnek*
+    
+    set(TESTDATA "Test Data")
+    set(TESTDATA1 "Test Data")
+    set(TESTVALUE 4)
+
+    if(("${TESTDATA}" STREQUAL "${TESTDATA1}") AND ("4" EQUAL "${TESTVALUE}"))
+        message("Karsilastirma basarili!")
+    else()
+        message("Karsilastirma basarisiz!")
+    endif()
+*Çıktı:*
+
+    Karsilastirma basarili!
+
+*Örnek*
+
+    set(TESTVALUE 2)
+
+    while("${TESTVALUE}" LESS 50)
+            message("Deger: ${TESTVALUE}")
+            math(EXPR TESTVALUE "${TESTVALUE} + 2")
+    endwhile()
+
+*Çıktı:*
+
+    Deger: 2
+    Deger: 4
+    Deger: 6
+    Deger: 8
+    Deger: 10
+    Deger: 12
+    Deger: 14
+    Deger: 16
+    Deger: 18
+    Deger: 20
+    Deger: 22
+    Deger: 24
+    Deger: 26
+    Deger: 28
+    Deger: 30
+    Deger: 32
+    Deger: 34
+    Deger: 36
+    Deger: 38
+    Deger: 40
+    Deger: 42
+    Deger: 44
+    Deger: 46
+    Deger: 48
+
+*Örnek*
+
+    foreach(idx RANGE 0 50 2)
+        message("Index degeri: ${idx}")
+    endforeach()
+
+*Çıktı:*
+
+    Index degeri: 0
+    Index degeri: 2
+    Index degeri: 4
+    Index degeri: 6
+    Index degeri: 8
+    Index degeri: 10
+    Index degeri: 12
+    Index degeri: 14
+    Index degeri: 16
+    Index degeri: 18
+    Index degeri: 20
+    Index degeri: 22
+    Index degeri: 24
+    Index degeri: 26
+    Index degeri: 28
+    Index degeri: 30
+    Index degeri: 32
+    Index degeri: 34
+    Index degeri: 36
+    Index degeri: 38
+    Index degeri: 40
+    Index degeri: 42
+    Index degeri: 44
+    Index degeri: 46
+    Index degeri: 48
+    Index degeri: 50
 
 ## Fonksiyon ve Makro Tanımlamak
 
@@ -188,7 +295,7 @@ Makrolar, işleyiş ve yapı olarak fonksiyonlara benzerler. Fakat makrolar, ça
 
 ## Diğer Komut Dosyalarını Dahil Etmek
 
-Kütüphane örneğinde kullandığımız gibi CMake işleyiş sırasında dizin yapısında yer alan **CMakeLists.txt** komut dosyaları aracılığıyla kapsamları yürütür. **add_subdirectory** gibi komutlarla kullanılan bu yöntem çeşitli alt kütüphaneleri ve içerikleri projenize dahil etmenizi sağlar.
+Kütüphane örneğinde kullandığımız gibi CMake işleyiş sırasında dizin yapısında yer alan **CMakeLists.txt** komut dosyaları aracılığıyla kapsamları yürütür. **add_subdirectory** gibi komutlarla kullanılan bu yöntem çeşitli alt kütüphaneleri ve içerikleri projenize dahil edebilmenizi sağlar.
 
 Bunun yanı sıra **find_package** komutu yardımıyla dış kitaplıkları arayabilir ve projenize dahil edebilirsiniz. Açıklama ve örnek için bu dokümanının başında verilen kaynağı daha detaylı okuyabilirsiniz.
 
@@ -227,6 +334,33 @@ CMake dosyamızda **add_executable**, **add_library**, **add_custom_target** gib
     <img src="../images/CMakeLanguage/GettingAndSettingProperties.png" alt="Fonksiyon Örneği" style="width:80%; height:80%;"/>
 </div>
 
+
+*Bir Dosyanın Özelliklerini Ayarlamak*
+
+    set_property(TARGET my_target PROPERTY PROPERTY_NAME value)
+
+*Bir Dosyanın İzinlerini Ayarlamak*
+
+    set_property(TARGET my_target PROPERTY PERMISSION OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
+
+*Bir Dosyanın Derleme Sürecini Ayarlamak*
+
+     set_property(SOURCE source.cpp PROPERTY COMPILE_FLAGS "-Wall -Werror")
+
+*Bir Dosyanın Bağımlıklarını Ayarlamak*
+
+    set_property(TARGET my_target PROPERTY LINK LINK_LIBRARIES library1 library2)
+
+*Örnek*
+
+    set_property(DIRECTORY PROPERTY TEST_DIRECTORY  "${PROJECT_SOURCE_DIR}/testDirectory")
+    get_property(testDirectoryValue DIRECTORY PROPERTY TEST_DIRECTORY)
+    message("Test Dizini: ${testDirectoryValue}")
+
+*Çıktı*
+
+    Test Dizini: /testDirectory
+
 ## Yorum Satırı
 
 *Tek satırda yorum eklemek için;*
@@ -240,6 +374,10 @@ CMake dosyamızda **add_executable**, **add_library**, **add_custom_target** gib
         yorum satırı
     ]]
 
+## Bir Proje Üzerinden Örnek
+
+Anlatılan özelliklerin kullanımıyla bir proje örneğinin ele alınması [bağlantıda](https://www.youtube.com/watch?v=mBjRjZcRTA0) gösterilmiştir. Kesinlikle inceleneminizi öneriyorum!
+
 # Kaynakça
 
 * ChatGPT 3.5'ten yararlanılmıştır.
@@ -249,6 +387,10 @@ CMake dosyamızda **add_executable**, **add_library**, **add_custom_target** gib
 * [cmake-language(7)](https://cmake.org/cmake/help/latest/manual/cmake-language.7.html)
 * [CMake Documentation - if](https://cmake.org/cmake/help/latest/command/if.html) 
 * [OS specific instructions in CMAKE: How to?](https://stackoverflow.com/questions/9160335/os-specific-instructions-in-cmake-how-to)
+* [How to CMake Good - 2a - Scriting Basics](https://www.youtube.com/watch?v=rKBdoMzY3cA&list=PLK6MXr8gasrGmliSuVQXpfFuE1uPT615s&index=9)
+* [How to CMake Good - 2b - Control Flow and Auto-dereferencing](https://www.youtube.com/watch?v=J23ZW-b9s9c)
+* [How to CMake Good - 2c - Functions, Scopes, Arguments, and List Expansion](https://www.youtube.com/watch?v=cOQy8l68Yyk)
+* [How to CMake Good - 2d - Advanced Functions and cmake_parse_arguments() by Example](https://www.youtube.com/watch?v=mBjRjZcRTA0)
 
 <div align="center">
     <a href="ProjeyiAltDizinlereAyirmakVeYonetmek.md"> < Önceki Sayfaya Dön</a>

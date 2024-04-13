@@ -26,7 +26,8 @@ Kişisel olarak motivasyonum kullandığım IDE ortamlarının CMake'i otomatik 
 - [CMake Konfigürasyonuna Kütüphane Eklemek](docs/CMakeKutuphaneEklemek.md)
 - [Projeyi Alt Dizinlere Ayırmak Ve Yönetmek](docs/ProjeyiAltDizinlereAyirmakVeYonetmek.md)
 - [CMake'in Betik Dili](docs/CMakeBetikDili.md)
-- [İleri Düzey Konular](docs/ileri_duzey_konular.md)
+
+**Doküman içeriğinin geliştirilmesi devam etmektedir...**
 
 ## Katkı
 

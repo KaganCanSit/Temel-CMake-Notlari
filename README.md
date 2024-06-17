@@ -49,6 +49,8 @@ Burada yer alan içerikler açık kaynak olarak geliştirilme gayesi taşımakta
 "Pull request" isteği oluşturarak nasıl katkı sağlayacağınıza veya "Issue" kısmını kullanarak nasıl hata bildireceğinize dair sorularınız varsa
 [bu bağlantıda](https://kagancansit.github.io/pages/blogs/03.acik_kaynaga_katkida_bulunmaya_dair_ilk_adimlar.html) yer alan kaynaktan yararlanabilirsiniz.
 
+Katkıda bulunurken [katkı kurallarına](./CONTRIBUTING.md) ve [topluluk kurallarına](./CODE_OF_CONDUCT.md) dikkat etmeyi unutmayınız.
+
 **Unutmayın! Gelişmek, geliştirmek ve ilerletmek yeterince zor. Bu sebeple bildirim ve katkı sağlarken tüm topluluk adına anlayışlı, paylaşımcı ve nazik olun. Ayrıca eklediğiniz içeriklerde kullandığınız dış kaynaklar varsa kesinlikle referans vermenizi rica ediyorum. İçerik sahipleri başta olmak üzere, bilgi aldığınız içeriği destekleyenler için emeklerini teslim edelim!**
 
 ## Lisans
